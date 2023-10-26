@@ -1,5 +1,17 @@
 let ville = "avignon"; // On déclare une ville pour que ce ne soit pas vide au démarrage
 recevoirTemperature(ville);
+let dateActuelle = new Date();
+let dateLocale = dateActuelle.toLocaleString('fr-FR', {
+    weekday: "long",
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit'
+});
+
+document.querySelector('.date').innerHTML = dateLocale;
+document.querySelector('.date').style.color = "yellow";
+document.querySelector('.date').style.fontWeight = "bold";
 
 let changerDeVille = document.querySelector('#changer');
 changerDeVille.addEventListener('click', () => { // Au clic on demande une ville qu'on stocke
@@ -22,9 +34,12 @@ function recevoirTemperature(ville) {
                 let reponse = requete.response;
                 let temperature = reponse.main.temp;
                 let ville = reponse.name;
-
+                let temperatureRessentie = reponse.main.feels_like;
+                let vent = reponse.wind.speed;
                 document.querySelector('#temperature_label').innerHTML = temperature;
                 document.querySelector('#ville').innerHTML = ville;
+                document.querySelector('#temperatureRessentie').innerHTML = temperatureRessentie;
+                document.querySelector('.vent').innerHTML = vent;
             }
         }
         else {

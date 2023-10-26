@@ -4,46 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
     <title>Météo</title>
 </head>
 <body>
     <div class="container">
-  
         <div class="row justify-content-center">
-          
-          <div class="col-md-8">
-            <!-- Titre -->
-            <h1 class="text-center mt-5">Météo</h1>
-            
-            <!-- Ville / Temperature -->
-            <div class="text-center">
-              <span id="ville">paris</span>
-              
-              <div id="temperature">
-                <span id="temperature_label">
-                  xx.x
-                </span> °C
-              </div>
+            <div class="col-md-8">
+                <!-- Titre -->
+                <h1 class="text-center mt-5">Météo</h1>
+                    
+                <!-- Ville / Temperature -->
+                <div class="text-center">
+                    <div class="date"></div>
+                    <span id="ville">Paris</span>
+                    <div id="temperature">
+                        <span id="temperature_label">xx.x</span> °C
+                        <span id="temperatureRessentie">xx.xx</span> <span class="ressentie">T° ressentie</span>
+                    </div>
+                    Vitesse du vent<div class="vent">xx.xx</div> 
+                </div>
             </div>
-          </div>
-          
         </div>
         
-        <div class="row justify-content-center">  
-          <div class="col-md-8 text-center">
-            <!-- Changer de ville -->
-            <div id="changer" class="mt-2 text-center p-3 text-white font-weight-bold text-uppercase d-inline-block">
-              Changer de ville
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <!-- Changer de ville -->
+                <div id="changer" class="mt-2 text-center p-3 text-white font-weight-bold text-uppercase d-inline-block">
+                    Changer de ville
+                </div>
             </div>
-          </div>
-          
         </div>
-        
-      </div>
-      <script src="test.js"></script>
+    </div>
+    <script src="test.js"></script>
 </body>
 </html>
-

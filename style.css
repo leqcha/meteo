@@ -12,6 +12,10 @@ html, body {
   #temperature {
     font-size: 4em;
   }
+
+  #temperatureRessentie, .ressentie{
+    font-size: 30px;
+  }
   
   #changer {
     background: rgba(178, 223, 251, .3);
