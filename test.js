@@ -1,28 +1,35 @@
-let ville = "avignon";
-const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + ville + '&appid=35e38de93a41566af4e63f3e2e7186d1&units=metric';
+let ville = "avignon"; // On déclare une ville pour que ce ne soit pas vide au démarrage
+recevoirTemperature(ville);
 
-function recupererTemperature(){
+let changerDeVille = document.querySelector('#changer');
+changerDeVille.addEventListener('click', () => { // Au clic on demande une ville qu'on stocke
+    ville = prompt("Entrez une ville");
+    recevoirTemperature(ville); // on envoie la nouvelle ville à la fonction appelée
+});
+
+function recevoirTemperature(ville) {
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q=' 
+    + ville + '&appid=1ddc336ce648aec5c607b5aa7a31ac66&units=metric'; // url est dans la fonction pour pouvpoir changer la ville !
+
     let requete = new XMLHttpRequest();
     requete.open('GET', url);
     requete.responseType = 'json';
     requete.send();
 
     requete.onload = function () {
-        if (requete.readyState === XMLHttpRequest.DONE){
-            if(requete.status === 200){
+        if (requete.readyState === XMLHttpRequest.DONE) {
+            if (requete.status === 200) {
                 let reponse = requete.response;
-                console.log(reponse);
                 let temperature = reponse.main.temp;
-                console.log(temperature);
+                let ville = reponse.name;
 
                 document.querySelector('#temperature_label').innerHTML = temperature;
                 document.querySelector('#ville').innerHTML = ville;
             }
         }
-        else{
-            alert ("Un problème est survenu, allez vous faire un café et revenez plsu tard");
+        else {
+            alert("Un problème est survenu, allez vous faire un café et revenez plsu tard");
         }
     }
 }
 
-recupererTemperature();
